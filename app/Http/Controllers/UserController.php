@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Vehiculo;
-use App\Models\AsignacionVehiculo;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\VehiculoImport;
 
-class VehiculoController extends Controller
+use App\Models\User;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UserImport;
+
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,7 @@ class VehiculoController extends Controller
      */
     public function index()
     {
-        $vehiculos = Vehiculo::all();
-        return view('vehiculo.index',compact('vehiculos'));
+        //
     }
 
     /**
@@ -28,7 +27,7 @@ class VehiculoController extends Controller
      */
     public function create()
     {
-        return view('vehiculo.create');
+        return view('user.create');
     }
 
     /**
@@ -39,9 +38,11 @@ class VehiculoController extends Controller
      */
     public function store(Request $request)
     {
-        $file=$request->file('file');
-        Excel::import(new VehiculoImport,$file);
-        return back();
+        // $file = $request->file('file');
+
+        // Excel::import(new User,$file);
+        (new UserImport)->import($request->file('file'));
+        return back()->with('mensaje','Usuarios dados de alta');
     }
 
     /**
@@ -52,11 +53,7 @@ class VehiculoController extends Controller
      */
     public function show($id)
     {
-        $vehiculo = Vehiculo::findOrFail($id);
-        $asignacion=AsignacionVehiculo::find($vehiculo->idAsignacion);
-        $vehiculo->asignacion=$asignacion;
-        return view ('vehiculo.show',compact('vehiculo'));
-
+        //
     }
 
     /**
@@ -92,16 +89,4 @@ class VehiculoController extends Controller
     {
         //
     }
-
-    public function importacion()
-    {
-        return view('vehiculo.import-form');
-    }
-    public function import(Request $request)
-    {
-        (new VehiculoImport)->import($request->file('file'));
-      return back()->with('mensaje','Vehiculos Cargados');
-    }
-
-
 }

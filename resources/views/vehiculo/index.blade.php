@@ -5,29 +5,29 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Dominio</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Combustible</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
+  @foreach($vehiculos as $vehiculo)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$vehiculo->idVehiculo}}</th>
+      <td>{{$vehiculo->dominio}}</td>
+      <td>{{$vehiculo->descripcion}}</td>
+      <td>{{$vehiculo->modelo}}</td>
+      <td>{{$vehiculo->tipo}}</td>
+      <td>{{$vehiculo->combustible}}</td>
+      <td>
+        <a class='btn btn-primary' href="{{route('vehiculo.show',$vehiculo->idVehiculo)}}">Ver</a>
+        <a class='btn btn-warning' href="{{route('vehiculo.edit',$vehiculo->idVehiculo)}}">Editar</a>
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 @endsection
