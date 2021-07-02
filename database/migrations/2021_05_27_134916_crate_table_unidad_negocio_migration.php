@@ -14,7 +14,7 @@ class CrateTableUnidadNegocioMigration extends Migration
     public function up()
     {
         Schema::create('unidadNegocio', function (Blueprint $table) {
-            $table->id('idUnidadNegocio');
+            $table->id('unidadNegocio_id');
             $table->string('unidadNegocio');
             $table->timestamps();
         });

@@ -14,12 +14,12 @@ class CreateTableEstablecimientosMigration extends Migration
     public function up()
     {
         Schema::create('establecimientos', function (Blueprint $table) {
-            $table->id('idEstablecimiento');
-            $table->unsignedBigInteger('idLocalidad');
+            $table->id('establecimiento_id');
+            $table->unsignedBigInteger('localidad_id');
             $table->text('razonSocial');
             $table->text('bandera');
             $table->text('direccion');
-            $table->foreign('idLocalidad')->references('idLocalidad')->on('localidades'); // clave foranea
+            $table->foreign('localidad_id')->references('localidad_id')->on('localidades'); // clave foranea
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class CrateTableAreaAsignacionMigration extends Migration
     public function up()
     {
         Schema::create('areaAsignacion', function (Blueprint $table) {
-            $table->id('idAreaAsignacion');
+            $table->id('areaAsignacion_id');
             $table->string('area');
             $table->timestamps();
         });

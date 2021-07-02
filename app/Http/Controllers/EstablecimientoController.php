@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\EstablecimientoImport;
+use App\Models\Establecimiento;
 
 class EstablecimientoController extends Controller
 {
@@ -23,7 +26,7 @@ class EstablecimientoController extends Controller
      */
     public function create()
     {
-        //
+        return view('establecimiento.create');
     }
 
     /**
@@ -34,7 +37,9 @@ class EstablecimientoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file=$request->file('file');
+        Excel::import(new EstablecimientoImport,$file);
+        return back();
     }
 
     /**

@@ -14,7 +14,7 @@ class CreateTableProveedoresMigration extends Migration
     public function up()
     {
         Schema::create('proveedores', function (Blueprint $table) {
-            $table->id('idProveedor');
+            $table->id('proveedor_id');
             $table->text('proveedor'); //YPF, Edenred
             $table->timestamps();
         });

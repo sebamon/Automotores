@@ -13,18 +13,17 @@ class CreateTableFacturasDetCombustibleMigration extends Migration
      */
     public function up()
     {
-         Schema::dropIfExists('facturas_det_combustible');
-        Schema::create('facturas_det_combustible', function (Blueprint $table) {
-            $table->unsignedBigInteger('idFactura');
-            $table->integer('idDetalleFactura')->increments();
+             Schema::create('facturas_det_combustible', function (Blueprint $table) {
+            $table->unsignedBigInteger('facturaCab_id');
+            $table->integer('facturaDetalle_id')->increments();
             
             $table->text('producto');// Pasar a otra tabla
             $table->float('litros',5,2);
             $table->float('precio',8,2);
             $table->float('iva',4,2);
            
-            $table->foreign('idFactura')->references('idFactura')->on('facturas_cab_combustible'); // clave foranea
-            $table->primary(['idFactura','idDetalleFactura']);
+            $table->foreign('facturaCab_id')->references('facturaCab_id')->on('facturas_cab_combustible'); // clave foranea
+            $table->primary(['facturaCab_id','facturaDetalle_id']);
             $table->timestamps();
         });
     }

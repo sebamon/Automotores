@@ -9,7 +9,7 @@ class Vehiculo extends Model
 {
     protected $table='vehiculos';
 
-    protected $primaryKey='idVehiculo';
+    protected $primaryKey='vehiculo_id';
     protected $fillable= array('dominio','descripcion','nroChasis','nroMotor','modelo','tipo','estadoPropiedad','combustible','estadoPloteo');
     protected $hidden = ['created_at','updated_at'];
     use HasFactory;

@@ -14,7 +14,7 @@ class CreateTableConductoresMigration extends Migration
     public function up()
     {
         Schema::create('conductores', function (Blueprint $table) {
-            $table->id('idConductor');
+            $table->id('conductor_id');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('dni');

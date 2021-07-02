@@ -14,21 +14,21 @@ class CreateTableFacturasCabCombustibleMigration extends Migration
     public function up()
     {
         Schema::create('facturas_cab_combustible', function (Blueprint $table) {
-            $table->bigIncrements('idFactura');
+            $table->bigIncrements('facturaCab_id');
             $table->text('nroFactura');
             $table->date('fecha');
             $table->time('hora');
             $table->text('tarjeta'); //Pasar a tabla
-            $table->unsignedBigInteger('idConductor');
-            $table->unsignedBigInteger('idProveedor');
-            $table->unsignedBigInteger('idVehiculo');
-            $table->unsignedBigInteger('idCentroCosto');
+            $table->unsignedBigInteger('conductor_id');
+            $table->unsignedBigInteger('proveedor_id');
+            $table->unsignedBigInteger('vehiculo_id');
+            $table->unsignedBigInteger('centroCosto_id');
             $table->string('remito');
            // $table->primary('idFactura');
-            $table->foreign('idConductor')->references('idConductor')->on('conductores'); // clave foranea
-            $table->foreign('idProveedor')->references('idProveedor')->on('proveedores'); // clave foranea
-            $table->foreign('idVehiculo')->references('idVehiculo')->on('vehiculos'); // clave foranea
-            $table->foreign('idCentroCosto')->references('idCentroCosto')->on('centros_costo'); // clave foranea
+            $table->foreign('conductor_id')->references('conductor_id')->on('conductores'); // clave foranea
+            $table->foreign('proveedor_id')->references('proveedor_id')->on('proveedores'); // clave foranea
+            $table->foreign('vehiculo_id')->references('vehiculo_id')->on('vehiculos'); // clave foranea
+            $table->foreign('centroCosto_id')->references('centroCosto_id')->on('centros_costo'); // clave foranea
             
             $table->timestamps();
         });

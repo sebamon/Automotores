@@ -9,8 +9,8 @@ class Localidad extends Model
 {
     protected $table='localidades';
 
-    protected $primaryKey='idLocalidad';
-    protected $fillable= array('idProvincia','localidad');
+    protected $primaryKey='localidad_id';
+    protected $fillable= array('provincia_id','localidad');
     protected $hidden = ['created_at','updated_at'];
     use HasFactory;
 }

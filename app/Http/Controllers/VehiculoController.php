@@ -52,9 +52,11 @@ class VehiculoController extends Controller
      */
     public function show($id)
     {
+
         $vehiculo = Vehiculo::findOrFail($id);
-        $asignacion=AsignacionVehiculo::find($vehiculo->idAsignacion);
-        $vehiculo->asignacion=$asignacion;
+
+       // $asignacion=AsignacionVehiculo::findOrFail($vehiculo->asignacion_id);
+      //  $vehiculo->asignacion=$asignacion;
         return view ('vehiculo.show',compact('vehiculo'));
 
     }

@@ -9,7 +9,7 @@ class Provincia extends Model
 {
     protected $table='provincias';
 
-    protected $primaryKey='idProvincia';
+    protected $primaryKey='provincia_id';
     protected $fillable= array('provincia');
     protected $hidden = ['created_at','updated_at'];
     use HasFactory;

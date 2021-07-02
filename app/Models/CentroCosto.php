@@ -9,7 +9,7 @@ class CentroCosto extends Model
 {
     protected $table='centros_costo';
 
-    protected $primaryKey='idCentroCosto';
+    protected $primaryKey='centroCosto_id';
     protected $fillable= array('centroCosto');
     protected $hidden = ['created_at','updated_at'];
     use HasFactory;

@@ -54,7 +54,7 @@
         <button href='{{route("vehiculo.index")}}'class='btn btn-primary btn-block'>Atras</button>
     </div>
     <div class="col col-6">
-        <button href='{{route("vehiculo.edit",$vehiculo->idVehiculo)}}' class='btn btn-warning btn-block'>Editar</button>
+        <button href='{{route("vehiculo.edit",$vehiculo->vehiculo_id)}}' class='btn btn-warning btn-block'>Editar</button>
     </div>
 </div>
 @endsection

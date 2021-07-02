@@ -9,8 +9,11 @@ class AreaAsignacion extends Model
 {
     protected $table='areaAsignacion';
 
-    protected $primaryKey='idAreaAsignacion';
+    protected $primaryKey='areaAsignacion_id';
     protected $fillable= array('area');
     protected $hidden = ['created_at','updated_at'];
     use HasFactory;
+
+   
 }
+

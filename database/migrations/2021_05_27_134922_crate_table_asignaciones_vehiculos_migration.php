@@ -14,13 +14,13 @@ class CrateTableAsignacionesVehiculosMigration extends Migration
     public function up()
     {
         Schema::create('asignacionesVehiculos', function (Blueprint $table) {
-            $table->id('idAsignacionVehiculo');
-            $table->string('dominio');
-            $table->unsignedBigInteger('idArea');
-            $table->unsignedBigInteger('idUnidad');
-            $table->foreign('idArea')->references('idAreaAsignacion')->on('areaAsignacion'); // clave foranea
-            $table->foreign('idUnidad')->references('idUnidadNegocio')->on('unidadNegocio'); // clave foranea
-            $table->foreign('dominio')->references('dominio')->on('vehiculos'); // clave foranea
+            $table->id('asignacionVehiculo_id');
+            $table->unsignedBigInteger('vehiculo_id')->nullable();
+            $table->unsignedBigInteger('area_id')->nullable();
+            $table->unsignedBigInteger('unidad_id')->nullable();
+            $table->foreign('area_id')->references('areaAsignacion_id')->on('areaAsignacion'); // clave foranea
+            $table->foreign('unidad_id')->references('unidadNegocio_id')->on('unidadNegocio'); // clave foranea
+            $table->foreign('vehiculo_id')->references('vehiculo_id')->on('vehiculos'); // clave foranea
             $table->timestamps();
     });
     }

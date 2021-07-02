@@ -14,10 +14,10 @@ class CreateTableLocalidadesMigration extends Migration
     public function up()
     {
         Schema::create('localidades', function (Blueprint $table) {
-            $table->id('idLocalidad');
-            $table->unsignedBigInteger('idProvincia');
+            $table->id('localidad_id');
+            $table->unsignedBigInteger('provincia_id');
             $table->string('localidad');
-            $table->foreign('idProvincia')->references('idProvincia')->on('provincias'); // clave foranea
+            $table->foreign('provincia_id')->references('provincia_id')->on('provincias'); // clave foranea
             $table->timestamps();
         });
     }

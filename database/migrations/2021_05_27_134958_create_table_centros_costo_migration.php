@@ -14,7 +14,7 @@ class CreateTableCentrosCostoMigration extends Migration
     public function up()
     {
         Schema::create('centros_costo', function (Blueprint $table) {
-            $table->id('idCentroCosto');
+            $table->id('centroCosto_id');
             $table->string('centroCosto');
             
             $table->timestamps();

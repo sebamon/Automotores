@@ -9,7 +9,7 @@ class Conductor extends Model
 {
     protected $table='conductores';
 
-    protected $primaryKey='idConductor';
+    protected $primaryKey='conductor_id';
     protected $fillable= array('nombre','apellido','dni');
     protected $hidden = ['created_at','updated_at'];
     use HasFactory;

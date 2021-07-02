@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EstablecimientoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::resource('user',UserController::class);
+Route::resource('establecimiento',EstablecimientoController::class);
 
 Route::get('vehiculo/import-form',[VehiculoController::class,'importacion'])->name('vehiculo.import-form');
 Route::post('vehiculo/import',[VehiculoController::class,'import'])->name('vehiculo.import');

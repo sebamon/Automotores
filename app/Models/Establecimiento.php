@@ -9,8 +9,8 @@ class Establecimiento extends Model
 {
     protected $table='establecimientos';
 
-    protected $primaryKey='idEstablecimiento';
-    protected $fillable= array('idLocalidad','razonSocial','bandera','direccion');
+    protected $primaryKey='establecimiento_id';
+    protected $fillable= array('localidad_id','razonSocial','bandera','direccion');
     protected $hidden = ['created_at','updated_at'];
     use HasFactory;
 }

@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\Importable;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class AsignacionVehiculoImport implements toModel
+class AsignacionVehiculoImport implements toModel,WithHeadingRow
 {
     use Importable;
     /**
@@ -27,11 +27,12 @@ class AsignacionVehiculoImport implements toModel
         $area=AreaAsignacion::get()->where('area',$row['area']);
         $unidad=UnidadNegocio::get()->where('unidadNegocio',$row['unidadNegocio']);
 
-        }
+        
 
         return new AsignacionVehiculo([
             'idUnidad' => $unidad->idUnidadNegocio,
             'idArea' => $area->idAreaAsignacion,
+            
         ]);
     }
 }
